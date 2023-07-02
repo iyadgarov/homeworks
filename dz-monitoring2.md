@@ -43,11 +43,12 @@
 "agent1"
 ![alt Zabbix-agent1](img/zabbix-agent1-log.JPG)
 
-"agent2"
+скриншот лога zabbix agent, где видно, что он работает с сервером
+"agent2"  
 ![alt Zabbix-agent2](img/zabbix-agent2-log.JPG)
 
 скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
-![alt Zabbix-data](img/zabbix-data.JPG)
+![alt Zabbix-data](img/data-hosts.JPG)
 
 
 
