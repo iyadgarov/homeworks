@@ -20,7 +20,7 @@
 
 Сделайте скриншот.  
 
-![alt Zabbix-main](img/zabbix-main.jpg)
+![alt Zabbix-main](img/zabbix-main.JPG)
 
 
 ### Задание 2
@@ -36,18 +36,18 @@
 
 
 скриншот раздела Configuration > Hosts, где видно, что агенты подключены к серверу
-![alt Zabbix-hosts](img/zabbix-hosts.jpg)
+![alt Zabbix-hosts](img/zabbix-hosts.JPG)
 
 
 скриншот лога zabbix agent, где видно, что он работает с сервером
 "agent1"
-![alt Zabbix-agent1](img/zabbix-agent1-log.jpg)
+![alt Zabbix-agent1](img/zabbix-agent1-log.JPG)
 
 "agent2"
-![alt Zabbix-agent2](img/zabbix-agent2-log.jpg)
+![alt Zabbix-agent2](img/zabbix-agent2-log.JPG)
 
 скриншот раздела Monitoring > Latest data для обоих хостов, где видны поступающие от агентов данные.
-![alt Zabbix-data](img/zabbix-data.jpg)
+![alt Zabbix-data](img/zabbix-data.JPG)
 
 
 
