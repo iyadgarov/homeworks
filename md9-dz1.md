@@ -26,6 +26,55 @@
 - Настройте Keepalived так, чтобы он запускал данный скрипт каждые 3 секунды и переносил виртуальный IP на другой сервер, если bash-скрипт завершался с кодом, отличным от нуля (то есть порт веб-сервера был недоступен или отсутствовал index.html). Используйте для этого секцию vrrp_script
 - На проверку отправьте получившейся bash-скрипт и конфигурационный файл keepalived, а также скриншот с демонстрацией переезда плавающего ip на другой сервер в случае недоступности порта или файла index.html
 
+Скриншот bash скрипта
+![alt md9-dz1-img3.JPG](/img/md9-dz1-img3.JPG)
+
+CODE  
+#!/bin/bash  
+if [[ $(ss -tulpn | grep LISTEN | grep :80) ]] && [[ -f /var/www/html/index.html ]]; then  
+exit 0  
+else  
+exit 1  
+fi  
+
+Скриншот keepalived.conf  
+![alt md9-dz1-img4.JPG](/img/md9-dz1-img4.JPG)
+
+CODE  
+
+global_defs {  
+	enable_script_security  
+}  
+vrrp_script script1.sh {  
+	script "/root/script1.sh"  
+	interval 3  
+	timeout 3  
+	rise 1  
+	fall 1  
+}  
+  
+vrrp_instance VI_1 {  
+	state MASTER  
+	interface ens34  
+	virtual_router_id 15  
+	priority 100  
+	advert_int 1  
+  
+virtual_ipaddress {  
+192.168.43.250/24  
+}  
+track_script {  
+script1.sh  
+}  
+}  
+
+Скриншоты переезда плавующего айпи
+MASTER  
+![alt md9-dz1-img5.JPG](/img/md9-dz1-img5.JPG)  
+
+BACKUP
+![alt md9-dz1-img6.JPG](/img/md9-dz1-img6.JPG)
+
 
 ------
 
@@ -39,3 +88,4 @@
 
 - Зачет - выполнены все задания, ответы даны в развернутой форме, приложены требуемые скриншоты, конфигурационные файлы, скрипты. В выполненных заданиях нет противоречий и нарушения логики
 - На доработку - задание выполнено частично или не выполнено, в логике выполнения заданий есть противоречия, существенные недостатки, приложены не все требуемые материалы.
+  
