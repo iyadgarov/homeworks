@@ -27,7 +27,7 @@ https://github.com/iyadgarov/homeworks/blob/main/haproxy-2.cfg
 
   Скриншот перенаправления запросов  
   
-  ![alt md9-dz2-img1.JPG](/img/md9-dz2-img2.JPG)
+  ![alt md9-dz2-img2.JPG](/img/md9-dz2-img2.JPG)
 
 ---
 
