@@ -23,7 +23,7 @@
 
 **ОТВЕТ:**  
 
-![alt md10-dz2-img2.JPG](/img/1022.JPG)
+![alt md10-dz2-img2.JPG](../img/1022.JPG)
 
 
 ### Задание 3. Удаление по TTL в Memcached
@@ -34,7 +34,7 @@
 
 **ОТВЕТ:**  
 
-![alt md10-dz2-img3.JPG](/img/md10-dz2-img3.JPG)
+![alt md10-dz2-img3.JPG](../img/md10-dz2-img3.JPG)
 
 
 ### Задание 4. Запись данных в Redis
@@ -45,7 +45,7 @@
 
 **ОТВЕТ:**  
 
-![alt md10-dz2-img4.JPG](/img/md10-dz2-img4.JPG)
+![alt md10-dz2-img4.JPG](../img/md10-dz2-img4.JPG)
 
 
 ## Дополнительные задания (со звёздочкой*)
