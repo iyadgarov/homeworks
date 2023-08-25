@@ -23,7 +23,7 @@
 
 **ОТВЕТ:**  
 
-![alt md10-dz2-img2.JPG](/img/md10-dz2-img2.JPG)
+![alt md10-dz2-img2.JPG](/img/1022.JPG)
 
 
 ### Задание 3. Удаление по TTL в Memcached
