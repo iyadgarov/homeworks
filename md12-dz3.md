@@ -68,6 +68,12 @@ limit 5;
 - все буквы в фамилии и имени из верхнего регистра переведите в нижний регистр,
 - замените буквы 'll' в именах на 'pp'.
 
+```
+select lower(replace (first_name, 'L', 'p')) Имя, lower(last_name) Фамилия 
+from customer c 
+where first_name like 'Kelly' or first_name like 'Willie';
+```
+
   ![alt md12-dz3-img4.JPG](/img/md12-dz3-img4.JPG)
 
 ## Дополнительные задания (со звёздочкой*)
