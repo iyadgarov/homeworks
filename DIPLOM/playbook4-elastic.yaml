@@ -1,0 +1,7 @@
+---
+- hosts: elastic
+  remote_user: ilkhom
+  become: yes
+  become_method: sudo
+  roles:
+    - elastic
