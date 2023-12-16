@@ -9,7 +9,7 @@ terraform {
 
 
 provider "yandex" {
-  token     = "y0_AgAAAABomFl8AATuwQAAAADlO2ebPhyLgmV8Reyuv9b7NDAaPEPf8Ic"
+  token     = "MY TOKEN"
   cloud_id  = "b1gkoq7pl7gg0ooq3nr4"
   folder_id = "b1gp3gttqlpmtjonaks2"
  
