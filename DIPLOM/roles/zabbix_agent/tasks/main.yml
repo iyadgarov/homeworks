@@ -1,0 +1,50 @@
+---
+# tasks file for zabbix_agent
+
+  - name: apt update
+    apt:
+      update_cache: yes
+
+  - name: Download zabbix for Ubuntu
+    get_url:
+      #url: https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
+      url: https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest+ubuntu22.04_all.deb
+      dest: "/tmp"
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+  - name: Download zabbix for Debian
+    get_url:
+        url: https://repo.zabbix.com/zabbix/6.0/debian/pool/main/z/zabbix-release/zabbix-release_6.0-4+debian11_all.deb
+        #url: https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest+ubuntu22.04_all.deb
+        dest: "/tmp"
+    when: ansible_facts['distribution'] == "Debian" 
+
+  - name: Install zabbix for Ubuntu
+    apt:
+      #deb: /tmp/zabbix-release_6.0-4+debian11_all.deb
+      deb: /tmp/zabbix-release_latest+ubuntu22.04_all.deb
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+  - name: Install zabbix for Debian
+    apt:
+      deb: /tmp/zabbix-release_6.0-4+debian11_all.deb
+      #deb: /tmp/zabbix-release_latest+ubuntu22.04_all.deb
+    when: ansible_facts['distribution'] == "Debian"
+
+  - name: apt update
+    apt:
+      update_cache: yes
+
+  - name: install zabbix-agent
+    apt:
+      name:
+        - zabbix-agent
+
+  - name: Edit zabbix_agent.conf
+    shell: |
+      sed -i 's/Server=127.0.0.1/Server=10.1.1.103/g' /etc/zabbix/zabbix_agentd.conf
+
+  - name: Restart all sevices
+    shell: |
+      systemctl restart zabbix-agent
+      systemctl enable zabbix-agent
